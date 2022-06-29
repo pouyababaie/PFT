@@ -1,1 +1,20 @@
-<p>form works!</p>
+<p-inputNumber
+  [(ngModel)]="numberInput"
+  mode="decimal"
+  inputId="withoutgrouping"
+  [useGrouping]="false"
+>
+</p-inputNumber>
+
+<p-calendar
+  [(ngModel)]="dateInput"
+  [showIcon]="true"
+  inputId="icon"
+></p-calendar>
+<p-dropdown
+  [options]="items"
+  [(ngModel)]="dropdownInput"
+  placeholder="Select Item"
+></p-dropdown>
+
+<input type="text" pInputText [(ngModel)]="textInput" />
