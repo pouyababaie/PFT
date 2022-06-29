@@ -3,13 +3,17 @@
   mode="decimal"
   inputId="withoutgrouping"
   [useGrouping]="false"
+  placeholder="Only numbers"
 >
 </p-inputNumber>
 
 <p-calendar
   [(ngModel)]="dateInput"
   [showIcon]="true"
-  inputId="icon"
+  inputId="multiple"
+  selectionMode="multiple"
+  [maxDateCount]="5"
+  placeholder="Select Days"
 ></p-calendar>
 <p-dropdown
   [options]="items"
@@ -17,4 +21,9 @@
   placeholder="Select Item"
 ></p-dropdown>
 
-<input type="text" pInputText [(ngModel)]="textInput" />
+<input
+  type="text"
+  pInputText
+  pKeyFilter="alpha"
+  placeholder="Only letters"
+/>

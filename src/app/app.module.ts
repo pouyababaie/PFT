@@ -12,6 +12,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { InputTextModule } from 'primeng/inputtext';
 import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
+import { KeyFilterModule } from 'primeng/keyfilter';
 
 import { AppComponent } from './app.component';
 import { FormComponent } from './steps/form/form.component';
@@ -41,6 +42,7 @@ import { UserTableComponent } from './steps/user-table/user-table.component';
     InputTextModule,
     TableModule,
     ButtonModule,
+    KeyFilterModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
