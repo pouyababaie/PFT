@@ -40,8 +40,6 @@ export class AppComponent implements OnInit {
     ];
   }
   changeSteps(value: number) {
-    console.log(this.activeIndex);
-
     switch (value) {
       case 1:
         this.activeIndex--;
@@ -52,8 +50,5 @@ export class AppComponent implements OnInit {
         this.activeIndex++;
         break;
     }
-
-    console.log(value);
-    console.log('active index' + '' + this.activeIndex);
   }
 }

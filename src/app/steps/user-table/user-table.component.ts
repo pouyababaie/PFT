@@ -1,17 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-
-interface IUser {
-  name: string;
-  age: number;
-  Id: number;
-}
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { IUser } from 'src/app/models/user.model';
+import { UserDataSharingService } from 'src/services/user-data-sharing.service';
 
 @Component({
   selector: 'app-user-table',
   templateUrl: './user-table.component.html',
   styleUrls: ['./user-table.component.scss'],
 })
-export class UserTableComponent implements OnInit {
+export class UserTableComponent implements OnInit, OnDestroy {
   users: IUser[] = [
     { age: 24, name: 'pouya', Id: 1 },
     { age: 42, name: 'mahdi', Id: 2 },
@@ -19,11 +15,11 @@ export class UserTableComponent implements OnInit {
   ];
 
   selectedUsers: IUser[] = [];
-  constructor() {}
+  constructor(private userDataService: UserDataSharingService) {}
 
   ngOnInit(): void {}
 
-  sendUserData(user: IUser[]) {
-    console.log(user);
+  ngOnDestroy(): void {
+    this.userDataService.updateUserData(this.selectedUsers);
   }
 }
