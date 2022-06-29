@@ -25,7 +25,14 @@
     type="button"
     label="Previous"
     (click)="changeSteps(1)"
+    [disabled]="activeIndex <= 0"
   ></button>
 
-  <button pButton type="button" label="Next" (click)="changeSteps(2)"></button>
+  <button
+    pButton
+    type="button"
+    label="Next"
+    (click)="changeSteps(2)"
+    [disabled]="activeIndex >= 3"
+  ></button>
 </div>
